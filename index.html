@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>E-commerce-Clothings-index</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <!-- font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <!-- css-->
+  <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+
+  <!--tailwind css-->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- java script-->
+  <script src='script.js'></script>
+  <script src="slideshow.js"></script>
+  <script src="newarr.js"></script>
+</head>
+
+
+
+
+<body>
+
+
+
+
+
+<!-- pop up bar-->
+<div id="banner" class="relative text-center bg-black text-white flex justify-end px-2 py-2" style="z-index: 20;">
+  <p class="pt-1 absolute left-1/2 transform -translate-x-1/2 text-xs sm:text-sm md:text-base text-center w-full sm:w-auto">
+    Sign Up and Get 20% OFF your first Order
+  </p>
+  <p onclick="PopupdismissBanner()" class="cursor-pointer text-white text-lg hover:text-red-400 transition z-10">
+    X
+  </p>
+</div>
+
+
+
+
+
+
+
+
+<!--- Responsive nav bar-->
+<nav class="p-5 flex items-center justify-between shadow-xl bg-pink-400 mb-6 relative" style="z-index: 10;">
+  <h1 class="text-4xl font-extrabold">Nostra</h1>
+  <div id="mySidenav" class="sidenav" style="z-index: 100;">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="#Newarrival">New Arrival</a>
+    <a href="#Trending-section">Trending</a>
+    <a href="collections.html">Collections</a>
+    <a href="aboutus.html">Contact us</a>
+  </div>
+  <div class="sidebar" onclick="openNav()" style="z-index: 30; position: absolute; right: 20px; top: 20px;">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+    </svg>
+  </div>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+    <ul class="flex gap-5 hidden md:flex ">
+      <li><a class="text-black hover:text-white" href="index.html">Home</a></li>
+      <li><a class="text-black hover:text-white" href="#Newarrival">New Arrival</a></li>
+      <li><a class="text-black hover:text-white" href="#Trending-section">Treanding</a></li>
+      <li><a class="text-black hover:text-white" href="collections.html">Collections</a></li>
+      <li><a class="text-black hover:text-white" href="aboutus.html">Contact us</a></li>
+    </ul>
+  </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--Slide show-->
+  <div id="slideshow" class="m-5">
+    <iframe 
+      src="slideshow.html"
+      title="Slideshow Presentation"
+      class="w-full h-[50vh] md:h-96 rounded-lg shadow-xl object-cover"
+      loading="lazy"
+    ></iframe>
+  </div>
+  
+  
+  
+
+
+
+
+  <!-- Brands -->
+   <section class="bg-pink-400">
+  <div id="brands" >
+    <h1 class="font-medium text-3xl pl-10 pt-5 inline-block">Brands</h1>
+    <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-10 gap-4 px-4">
+  
+  <div class="p-6 m-3  ">
+      <img src="./images/adidas.png" class="w-16 h-16 md:w-20 md:h-20 object-contain mx-auto cursor-pointer">
+      <h2 class="font-medium text-sm md:text-base text-center mt-2">Adidas</h2>
+    </div>
+
+    <div class="p-6 m-3  ">
+      <img src="./images/puma.png" class="w-16 h-16 md:w-20 md:h-20 object-contain mx-auto cursor-pointer">
+      <h2 class="font-medium text-sm md:text-base text-center mt-2">Puma</h2>
+    </div>
+
+    <div class="p-6 m-3  ">
+      <img src="./images/leaves.png" class="w-16 h-16 md:w-20 md:h-20 object-contain mx-auto cursor-pointer">
+      <h2 class="font-medium text-sm md:text-base text-center mt-2">Leaves</h2>
+    </div>
+
+    <div class="p-6 m-3  ">
+      <img src="./images/puma.png" class="w-16 h-16 md:w-20 md:h-20 object-contain mx-auto cursor-pointer">
+      <h2 class="font-medium text-sm md:text-base text-center mt-2">Puma</h2>
+    </div>
+
+    <div class="p-6 m-3  ">
+      <img src="./images/leaves.png" class="w-16 h-16 md:w-20 md:h-20 object-contain mx-auto cursor-pointer">
+      <h2 class="font-medium text-sm md:text-base text-center mt-2">Leaves</h2>
+    </div>
+
+    <div class="p-6 m-3  ">
+      <img src="./images/puma.png" class="w-16 h-16 md:w-20 md:h-20 object-contain mx-auto cursor-pointer">
+      <h2 class="font-medium text-sm md:text-base text-center mt-2">Puma</h2>
+    </div>
+
+    <div class="p-6 m-3  ">
+      <img src="./images/leaves.png" class="w-16 h-16 md:w-20 md:h-20 object-contain mx-auto cursor-pointer">
+      <h2 class="font-medium text-sm md:text-base text-center mt-2">Leaves</h2>
+    </div>
+
+
+    <div class="p-6 m-3">
+      <div class="w-20 h-16 md:w-24 md:h-20 rounded-lg mx-auto">
+        <img src="./images/twitch.png" 
+             class="w-full h-full object-contain p-2 cursor-pointer">
+      </div>
+      <h2 class="font-medium text-sm md:text-base text-center mt-2">Twitch</h2>
+    </div>
+
+    <div class="p-6 m-3">
+      <div class="w-20 h-16 md:w-24 md:h-20 rounded-lg mx-auto">
+        <img src="./images/behance.png"  
+             class="w-full h-full object-contain p-2 cursor-pointer">
+      </div>
+      <h2 class="font-medium text-sm md:text-base text-center mt-2">Behance</h2>
+    </div>
+
+   
+    <div class="p-6 m-3  ">
+      <img src="./images/leaves.png"  class="w-16 h-10 md:w-20 md:h-20 object-contain mx-auto cursor-pointer">
+      <h2 class="font-medium text-sm md:text-base text-center mt-2">Leaves</h2>
+    </div>
+  </div></div>
+</section>
+
+  <!-- text-->
+  <div id="middletext"  class="flex p-5 justify-left  ">
+    <h1 class="text-2xl w-80 text-gray-500 font-extrabold pl-10">We Provide Best Customer Experinces</h1>
+   <div class="flex align-middle"> <p class="w-100 pl-40 text-l  font-normal">|| We ensure that our customer have the best shopping experince</p></div>
+  </div>
+
+
+
+
+
+  <!-- service -->
+   <section id="" class="bg-white p-5">
+  <div class="md:flex  bg-white gap-6  ">
+    <div class="border p-3 ">
+      <img src="./images/check-mark.png" class="w-8 h-8  ">
+      <p class="text-l pb-1 font-bold">Original Products</p>
+      <p p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis doloribus quaerat
+        cupiditate, voluptatem quidem minus perferendis optio dolorum suscipit tempore. A dignissimos doloribus vitae
+        minima minus error distinctio tempore repudiandae!</p>
+    </div>
+
+    <div class="border p-3 ">
+      <img src="./images/happy.png" class="w-8 h-8 m-1">
+      <p class="text-l pb-1 font-bold">Satisfaction Guarantee</p>
+      <p p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis doloribus quaerat
+        cupiditate, voluptatem quidem minus perferendis optio dolorum suscipit tempore. A dignissimos doloribus vitae
+        minima minus error distinctio tempore repudiandae!</p>
+    </div>
+
+    <div class="border p-3 ">
+      <img src="./images/brush.png" class="w-8 h-8 m-1">
+      <p class="text-l pb-1 font-bold">New Arrival Everyday</p>
+      <p p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis doloribus quaerat
+        cupiditate, voluptatem quidem minus perferendis optio dolorum suscipit tempore. A dignissimos doloribus vitae
+        minima minus error distinctio tempore repudiandae!</p>
+    </div>
+
+    <div class="border p-3">
+      <img src="./images/fast-delivery.png" class="w-8 h-8 m-1">
+      <p class="text-l pb-1 font-bold">Fast & Free Shipping</p>
+      <p p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis doloribus quaerat
+        cupiditate, voluptatem quidem minus perferendis optio dolorum suscipit tempore. A dignissimos doloribus vitae
+        minima minus error distinctio tempore repudiandae!</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+    <!-- First Carousel -->
+    <section id="Newarrival" class="bg-white text-center relative overflow-hidden">
+      <h1 class="text-2xl p-6 font-extrabold">New Arrival </h1>
+      <div class="relative px-12">
+          <div id="carousel1" class="carousel-container no-scrollbar flex md:flex-auto overflow-x-auto gap-2 px-2 pb-6">
+              <div class="carousel-item relative">
+                  <img src="./cloths/d7.webp" alt="d7" class="rounded-lg w-full">
+                  <p class="absolute bottom-20 left-1/2 w-full p-3 transform -translate-x-1/2 hover:bg-pink-400 cursor-pointer bg-black  text-white">Shop Now</p>
+                </div>
+
+
+                    <div class="carousel-item relative">
+                  <img src="./cloths/n24.webp" alt="d7" class="rounded-lg w-full">
+                  <p class="absolute bottom-20 left-1/2 w-full p-3 transform -translate-x-1/2 hover:bg-pink-400 cursor-pointer bg-black  text-white">Shop Now</p>
+                </div>
+              <div class="carousel-item relative">
+                  <img src="./cloths/d3.webp" alt="d7" class="rounded-lg w-full">
+                  <p class="absolute bottom-20 left-1/2 w-full p-3 transform -translate-x-1/2 hover:bg-pink-400 cursor-pointer bg-black  text-white">Shop Now</p>
+                </div>
+              <div class="carousel-item relative">
+                  <img src="./cloths/d2.webp" alt="d7" class="rounded-lg w-full">
+                  <p class="absolute bottom-20 left-1/2 w-full p-3 transform -translate-x-1/2 hover:bg-pink-400 cursor-pointer bg-black  text-white">Shop Now</p>
+                </div>
+              <div class="carousel-item relative">
+                  <img src="./cloths/d5.webp" alt="d7" class="rounded-lg w-full">
+                  <p class="absolute bottom-20 left-1/2 w-full p-3 transform -translate-x-1/2 hover:bg-pink-400 cursor-pointer bg-black  text-white">Shop Now</p>
+                </div>
+              <div class="carousel-item relative">
+                  <img src="./cloths/d4.webp" alt="d7" class="rounded-lg w-full">
+                  <p class="absolute bottom-20 left-1/2 w-full p-3 transform -translate-x-1/2 hover:bg-pink-400 cursor-pointer bg-black  text-white">Shop Now</p>
+                </div>
+              <div class="carousel-item relative">
+                  <img src="./cloths/d13.webp" alt="d7" class="rounded-lg w-full">
+                  <p class="absolute bottom-20 left-1/2 w-full p-3 transform -translate-x-1/2 hover:bg-pink-400 cursor-pointer bg-black  text-white">Shop Now</p>
+                </div>
+              <div class="carousel-item relative">
+                <img src="./cloths/d11.webp" alt="d7" class="rounded-lg w-full">
+                <p class="absolute bottom-20 left-1/2 w-full p-3 transform -translate-x-1/2 hover:bg-pink-400 cursor-pointer bg-black  text-white">Shop Now</p>
+            </div>
+            <div class="carousel-item relative">
+              <img src="./cloths/d12.webp" alt="d7" class="rounded-lg w-full">
+              <p class="absolute bottom-20 left-1/2 w-full p-3 transform -translate-x-1/2 hover:bg-pink-400 cursor-pointer bg-black  text-white">Shop Now</p>
+            </div>
+
+              <!-- Add all other carousel items here -->
+          </div>
+          <button id="prevBtn1" class="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-black rounded-full w-10 h-10 flex items-center justify-center shadow-md z-10">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+          </button>
+          <button id="nextBtn1" class="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-black rounded-full w-10 h-10 flex items-center justify-center shadow-md z-10">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+          </button>
+      </div>
+  </section>
+
+  <!-- Second Carousel -->
+  <section id="Trending-section" class="Trending" class="bg-white text-center relative overflow-hidden">
+    <h1 class="text-2xl p-6 font-extrabold">Trending products
+    </h1>
+    <div class="relative px-12">
+      <div id="carousel2" class="carousel-container no-scrollbar flex md:flex- overflow-x-auto gap-2 px-2 pb-6">
+       
+       
+        <div class="carousel-item relative"> <!-- Added 'relative' here -->
+          <img src="./cloths/d14.webp" alt="d7" class="rounded-lg w-full">
+          <p class="absolute bottom-20 left-1/2 w-full p-3 transform -translate-x-1/2 hover:bg-pink-400 cursor-pointer bg-black  text-white">Shop Now</p>
+        </div>
+              <div class="carousel-item relative">
+                  <img src="./cloths/d8.webp" alt="d7" class="rounded-lg w-full ">
+                  <p class="absolute bottom-20 left-1/2 w-full p-3 transform -translate-x-1/2 hover:bg-pink-400 cursor-pointer bg-black  text-white">Shop Now</p>
+                </div>
+              <div class="carousel-item relative">
+                  <img src="./cloths/d9.webp" alt="d7" class="rounded-lg w-full ">
+                  <p class="absolute bottom-20 left-1/2 w-full p-3 transform -translate-x-1/2 hover:bg-pink-400 cursor-pointer bg-black  text-white">Shop Now</p>
+                </div>
+              <div class="carousel-item relative">
+                  <img src="./cloths/n22.webp" alt="d7" class="rounded-lg w-full ">
+                  <p class="absolute bottom-20 left-1/2 w-full p-3 transform -translate-x-1/2 hover:bg-pink-400 cursor-pointer bg-black  text-white">Shop Now</p>
+                </div>
+              <div class="carousel-item relative">
+                  <img src="./cloths/c2.webp" alt="d7" class="rounded-lg w-full ">
+                  <p class="absolute bottom-20 left-1/2 w-full p-3 transform -translate-x-1/2 hover:bg-pink-400 cursor-pointer bg-black  text-white">Shop Now</p>
+                </div>
+              <div class="carousel-item relative">
+                  <img src="./cloths/c3.webp" alt="d7" class="rounded-lg w-full ">
+                  <p class="absolute bottom-20 left-1/2 w-full p-3 transform -translate-x-1/2 hover:bg-pink-400 cursor-pointer bg-black   text-white">Shop Now</p>
+                </div>
+              <div class="carousel-item relative">
+                  <img src="./cloths/c5.webp" alt="d7" class="rounded-lg w-full ">
+                  <p class="absolute bottom-20 left-1/2 w-full p-3 transform -translate-x-1/2 hover:bg-pink-400 cursor-pointer bg-black  text-white">Shop Now</p>
+                </div>
+              <div class="carousel-item relative">
+                <img src="./cloths/c6.webp" alt="d7" class="rounded-lg w-full ">
+                <p class="absolute bottom-20 left-1/2 w-full p-3 transform -translate-x-1/2 hover:bg-pink-400 cursor-pointer bg-black  text-white">Shop Now</p>
+            </div>
+
+            <div class="carousel-item relative">
+              <img src="./cloths/c8.webp" alt="d7" class="rounded-lg w-full ">
+              <p class="absolute bottom-20 left-1/2 w-full p-3 transform -translate-x-1/2 hover:bg-pink-400 cursor-pointer bg-black  text-white">Shop Now</p>
+            </div>
+              <!-- Add all other carousel items here -->
+          </div>
+          <button id="prevBtn2" class="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-black rounded-full w-10 h-10 flex items-center justify-center shadow-md z-10">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+          </button>
+          <button id="nextBtn2" class="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-black rounded-full w-10 h-10 flex items-center justify-center shadow-md z-10">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+          </button>
+      </div>
+  </section>
+
+  <section class="relative overflow-hidden bg-pink-400 p-2">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="relative flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-12">
+        <!-- Text Content -->
+        <div class="flex-1 py-8 lg:py-16">  <!-- Reduced vertical padding -->
+          <div class="max-w-2xl">
+            <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">  <!-- Smaller text -->
+              Summer styles are finally here
+            </h1>
+            <p class="mt-3 text-base text-gray-500 sm:text-lg md:mt-4 md:text-xl">  <!-- Compact spacing -->
+              This year, our new summer collection will shelter you from the harsh elements...
+            </p>
+  
+            <!-- Mobile Images -->
+            <div class="mt-6 grid grid-cols-2 gap-3 sm:hidden">  <!-- Tighter grid -->
+              <!-- Reduced to 2 sample images for mobile -->
+              <div class="aspect-square overflow-hidden rounded-lg">
+                <img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-03-hero-image-tile-01.jpg" 
+                     class="h-full w-full object-cover">
+              </div>
+              <div class="aspect-square overflow-hidden rounded-lg">
+                <img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-03-hero-image-tile-02.jpg" 
+                     class="h-full w-full object-cover">
+              </div>
+            </div>
+  
+            <div class="mt-6 md:mt-8">
+              <a href="#" class="inline-block rounded-lg bg-black px-6 py-3 text-base font-medium text-white hover:bg-white hover:text-pink-800 md:px-8 md:py-4">
+                Shop Collection
+              </a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Desktop Images -->
+        <div class="hidden flex-1 sm:block">
+          <div class="grid grid-cols-3 gap-3 lg:gap-4">  <!-- Tighter gaps -->
+            <div class="space-y-3 lg:space-y-4">  <!-- Reduced spacing -->
+              <div class="aspect-square overflow-hidden rounded-lg">  <!-- Square aspect ratio -->
+                <img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-03-hero-image-tile-01.jpg" 
+                     class="h-full w-full object-cover">
+              </div>
+              <div class="aspect-square overflow-hidden rounded-lg">
+                <img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-03-hero-image-tile-02.jpg" 
+                     class="h-full w-full object-cover">
+              </div>
+            </div>
+            
+            <div class="space-y-3 lg:space-y-4">
+              <div class="aspect-square overflow-hidden rounded-lg">
+                <img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-03-hero-image-tile-03.jpg" 
+                     class="h-full w-full object-cover">
+              </div>
+              <div class="aspect-square overflow-hidden rounded-lg">
+                <img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-03-hero-image-tile-04.jpg" 
+                     class="h-full w-full object-cover">
+              </div>
+            </div>
+            
+            <div class="space-y-3 lg:space-y-4">
+              <div class="aspect-square overflow-hidden rounded-lg">
+                <img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-03-hero-image-tile-06.jpg" 
+                     class="h-full w-full object-cover">
+              </div>
+              <div class="aspect-square overflow-hidden rounded-lg">
+                <img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg" 
+                     class="h-full w-full object-cover">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section>
+    <div class="m-10 text-center ">
+      <h1 class="text-3xl inline-block p-0 font-extrabold">Join Our News Letter</h1>
+      <h2 class="text-2xl p-2">Signup for our email newspaper to get exclusive discounts, updates and more</h2>
+      <input class="input"><br>
+      <button class="p-3 bg-black text-white m-3 rounded"> Subscribe </button>
+    </div>
+  </section>
+
+
+  <section class="bg-black text-white">
+    <div class="text-clip m-10 p-3">
+      <h1 class="text-4xl inline-block pt-4 font-extrabold  ">Nostra</h1>
+      <p class="">The Stand chunk of ipsum used the 1500s is reporodused below for those interest</p>
+      <div class="flex justify-between bg-white gap-3 p-1 m-2 w-40 rounded-md ">
+        <p class="bg-gray-50 cursor-pointer "><img src="./images/social-media.png" class="w-6 h-6"></p>
+        <p class="bg-gray-50 cursor-pointer "><img src="./images/facebook.png" class="w-6 h-6"></p>
+        <p class="bg-gray-50 cursor-pointer "><img src="./images/twitter-sign.png" class="w-6 h-6"></p>
+        <p class="bg-gray-50  cursor-pointer"><img src="./images/youtube.png" class="w-6 h-6"></p>
+        <p class="bg-white  cursor-pointer"><img src="./images/gmail-logo.png" class="w-6 h-6"></p>
+      </div>
+      <p class="pt-2 inline-block ">@ 2023 Nostra.com</p>
+    </div>
+  </section>
+
+
+</body>
+
+</html>

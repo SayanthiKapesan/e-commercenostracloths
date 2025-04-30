@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>E-commerce-Clothings-index</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <!-- font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <!-- css-->
+  <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+
+  <!--tailwind css-->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- java script-->
+  <script src='script.js'></script>
+  <script src="slideshow.js"></script>
+  <script src="newarr.js"></script>
+</head>
+
+
+
+
+<body>
+
+
+  <!-- pop up bar-->
+  <div id="banner" class="relative text-center bg-black text-white flex  justify-end px-2 py-2">
+    <p
+      class=" pt-1 absolute left-1/2 transform -translate-x-1/2 text-xs sm:text-sm md:text-base text-center w-full sm:w-auto">
+      Sign Up and Get 20% OFF your first Order</p>
+    <p onclick="PopupdismissBanner()" class="cursor-pointer text-white text-lg hover:text-red-400 transition z-10">
+      X</p>
+  </div>
+
+
+
+
+
+
+
+  <!--- Responsive nav bar-->
+  <nav class="p-5 flex items-center justify-between shadow-xl bg-pink-400 mb-6 relative" style="z-index: 10;">
+    <h1 class="text-4xl font-extrabold">Nostra</h1>
+    <div id="mySidenav" class="sidenav" style="z-index: 100;">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="index.html">Home</a>
+      <a href="newarival.html">New Arrival</a>
+      <a href="treanding.html">Trending</a>
+      <a href="collections.html">Collections</a>
+      <a href="aboutus.html">Contact us</a>
+    </div>
+    <div class="sidebar" onclick="openNav()" style="z-index: 30; position: absolute; right: 20px; top: 20px;">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+      </svg>
+    </div>
+  <script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+  </script>
+      <ul class="flex gap-5 hidden md:flex ">
+        <li><a class="text-black hover:text-white" href="index.html">Home</a></li>
+        <li><a class="text-black hover:text-white" href="newarival.html">New Arrival</a></li>
+        <li><a class="text-black hover:text-white" href="treanding.html">Treanding</a></li>
+        <li><a class="text-black hover:text-white" href="collections.html">Collections</a></li>
+        <li><a class="text-black hover:text-white" href="aboutus.html">Contact us</a></li>
+      </ul>
+    </nav>
+  
+  
+
+
+
+<section>
+    <div class="isolate bg-black px-6 py-12 sm:py-16 lg:px-8"> <!-- Reduced py-24 to py-12 and sm:py-32 to sm:py-16 -->
+        <!-- Background decoration -->
+        <div class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]" aria-hidden="true">
+          <div class="relative left-1/2 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+        </div>
+      
+        <!-- Content -->
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="text-4xl font-semibold tracking-tight text-white sm:text-4xl">Contact Us</h2>
+          <p class="mt-2 text-lg leading-8 text-white">We are here to guide you.</p>
+        </div>
+      
+        <!-- Form -->
+        <form action="#" method="POST" class="mx-auto mt-10 max-w-xl sm:mt-12"> <!-- Reduced mt-16 to mt-10 and sm:mt-10 to sm:mt-12 -->
+            <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+            <!-- First Name -->
+            <div>
+              <label for="first-name" class="block text-sm font-semibold leading-6 text-white">First name</label>
+              <div class="mt-2.5">
+                <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+              </div>
+            </div>
+      
+            <!-- Last Name -->
+            <div>
+              <label for="last-name" class="block text-sm font-semibold leading-6 text-white">Last name</label>
+              <div class="mt-2.5">
+                <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+              </div>
+            </div>
+      
+            <!-- Company -->
+            <div class="sm:col-span-2">
+              <label for="company" class="block text-sm font-semibold leading-6 text-white">Title</label>
+              <div class="mt-2.5">
+                <input type="text" name="company" id="company" autocomplete="organization" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+              </div>
+            </div>
+      
+            <!-- Email -->
+            <div class="sm:col-span-2">
+              <label for="email" class="block text-sm font-semibold leading-6 text-white">Email</label>
+              <div class="mt-2.5">
+                <input type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+              </div>
+            </div>
+      
+            <!-- Phone Number -->
+            <div class="sm:col-span-2">
+              <label for="phone-number" class="block text-sm font-semibold leading-6 text-white">Phone number</label>
+              <div class="mt-2.5">
+                <div class="relative rounded-md shadow-sm">
+                  <div class="absolute inset-y-0 left-0 flex items-center">
+                    <label for="country" class="sr-only">Country</label>
+                    <select id="country" name="country" class="h-full rounded-md border-0 bg-transparent py-0 pl-3 pr-7 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm">
+                      <option>+41</option>
+                      <option>+91</option>
+                      <option>+94 </option>
+                    </select>
+                  </div>
+                  <input type="tel" name="phone-number" id="phone-number" autocomplete="tel" class="block w-full rounded-md border-0 py-1.5 pl-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="123-456-7890">
+                </div>
+              </div>
+            </div>
+      
+            <!-- Message -->
+            <div class="sm:col-span-2">
+              <label for="message" class="block text-sm font-semibold leading-6 text-white">Message</label>
+              <div class="mt-2.5">
+                <textarea name="message" id="message" rows="4" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+              </div>
+            </div>
+      
+            <!-- Privacy Policy -->
+            <div class="flex gap-x-4 sm:col-span-2">
+              <div class="flex h-6 items-center">
+                <button type="button" class="bg-gray-200 flex w-8 flex-none cursor-pointer rounded-full p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" role="switch" aria-checked="false" aria-labelledby="switch-1-label">
+                  <span class="sr-only">Agree to policies</span>
+                  <span aria-hidden="true" class="translate-x-0 h-4 w-4 transform rounded-full bg-white shadow-sm ring-1 ring-gray-900/5 transition duration-200 ease-in-out"></span>
+                </button>
+              </div>
+              <label class="text-sm leading-6 text-white" id="switch-1-label">
+                By selecting this, you agree to our
+                <a href="#" class="font-semibold text-pink-400">privacy&nbsp;policy</a>.
+              </label>
+            </div>
+          </div>
+      
+          <!-- Submit Button -->
+          <div class="mt-10">
+            <button type="submit" class="block w-full rounded-md bg-pink-400 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-pink-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Let's talk</button>
+          </div>
+        </form>
+      </div>
+</section>
+ 
+
+
+
+
+
+  
+
+
+<section class="bg-black text-white">
+  <div class="text-clip m-10 p-3">
+    <h1 class="text-4xl inline-block pt-4 font-extrabold  ">Nostra</h1>
+    <p class="">The Stand chunk of ipsum used the 1500s is reporodused below for those interest</p>
+    <div class="flex justify-between bg-white gap-3 p-1 m-2 w-40 rounded-md ">
+      <p class="bg-gray-50 cursor-pointer "><img src="./images/social-media.png" class="w-6 h-6"></p>
+      <p class="bg-gray-50 cursor-pointer "><img src="./images/facebook.png" class="w-6 h-6"></p>
+      <p class="bg-gray-50 cursor-pointer "><img src="./images/twitter-sign.png" class="w-6 h-6"></p>
+      <p class="bg-gray-50  cursor-pointer"><img src="./images/youtube.png" class="w-6 h-6"></p>
+      <p class="bg-white  cursor-pointer"><img src="./images/gmail-logo.png" class="w-6 h-6"></p>
+    </div>
+    <p class="pt-2 inline-block ">@ 2023 Nostra.com</p>
+  </div>
+</section>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>E-commerce-Clothings-index</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <!-- font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <!-- css-->
+  <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+
+  <!--tailwind css-->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- java script-->
+  <script src='script.js'></script>
+  <script src="slideshow.js"></script>
+  <script src="newarr.js"></script>
+</head>
+<style>
+  
+</style>
+<body >
+  <!-- pop up bar-->
+  <div id="banner" class="relative text-center bg-black text-white flex  justify-end px-2 py-2">
+    <p
+      class=" pt-1 absolute left-1/2 transform -translate-x-1/2 text-xs sm:text-sm md:text-base text-center w-full sm:w-auto">
+      Sign Up and Get 20% OFF your first Order</p>
+    <p onclick="PopupdismissBanner()" class="cursor-pointer text-white text-lg hover:text-red-400 transition z-10">
+      X</p>
+  </div>
+
+  <!--- Responsive nav bar-->
+  <nav class="p-5 flex items-center justify-between shadow-xl bg-pink-400 mb-6 relative" style="z-index: 10;">
+    <h1 class="text-4xl font-extrabold">Nostra</h1>
+    <div id="mySidenav" class="sidenav" style="z-index: 100;">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="index.html">Home</a>
+      <a href="newarival.html">New Arrival</a>
+      <a href="treanding.html">Trending</a>
+      <a href="collections.html">Collections</a>
+      <a href="aboutus.html">Contact us</a>
+    </div>
+    <div class="sidebar" onclick="openNav()" style="z-index: 30; position: absolute; right: 20px; top: 20px;">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+      </svg>
+    </div>
+    <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+    </script>
+    <ul class="flex gap-5 hidden md:flex ">
+      <li><a class="text-black hover:text-white" href="index.html">Home</a></li>
+      <li><a class="text-black hover:text-white" href="newarival.html">New Arrival</a></li>
+      <li><a class="text-black hover:text-white" href="treanding.html">Treanding</a></li>
+      <li><a class="text-black hover:text-white" href="collections.html">Collections</a></li>
+      <li><a class="text-black hover:text-white" href="aboutus.html">Contact us</a></li>
+    </ul>
+  </nav>
+
+ 
+
+
+
+
+
+
+   <!-- Main Content -->
+   <section class="flex flex-1">
+    <!-- Desktop Filters -->
+    <div class="w-60 bg-black text-white p-4 shadow-lg rounded hidden md:block">
+      <h3 class="font-bold text-lg mb-4">Filters</h3>
+        
+        <!-- Price Filter -->
+        <div class="mb-6">
+            <h4 class="font-semibold mb-2">Price Range</h4>
+            <div class="flex items-center justify-between mb-2">
+                <span>$0</span>
+                <span>$1000</span>
+            </div>
+            <input type="range" min="0" max="1000" value="1000" 
+                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                id="priceRange">
+            <div class="text-center mt-2">
+                <span id="priceValue">Up to $1000</span>
+            </div>
+        </div>
+
+        <!-- Color Filter -->
+        <div class="mb-6">
+            <h4 class="font-semibold mb-2">Colors</h4>
+            <div class="space-y-2" id="colorFilters">
+                <label class="flex items-center">
+                    <input type="checkbox" class="form-checkbox h-4 w-4 text-pink-400" value="black" onchange="filterProducts()">
+                    <span class="ml-2">Black</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-400" value="blue" onchange="filterProducts()">
+                    <span class="ml-2">Blue</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="form-checkbox h-4 w-4 text-white border border-gray-300" value="white" onchange="filterProducts()">
+                    <span class="ml-2">White</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="form-checkbox h-4 w-4 text-red-400" value="red" onchange="filterProducts()">
+                    <span class="ml-2">Red</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="form-checkbox h-4 w-4 text-pink-400" value="pink" onchange="filterProducts()">
+                    <span class="ml-2">Pink</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="form-checkbox h-4 w-4 text-orange-400" value="orange" onchange="filterProducts()">
+                    <span class="ml-2">Orange</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="form-checkbox h-4 w-4 text-yellow-400" value="gold" onchange="filterProducts()">
+                    <span class="ml-2">Gold</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="form-checkbox h-4 w-4 text-green-400" value="green" onchange="filterProducts()">
+                    <span class="ml-2">Green</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="form-checkbox h-4 w-4 text-purple-400" value="majanta" onchange="filterProducts()">
+                    <span class="ml-2">Majanta</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="form-checkbox h-4 w-4 text-brown-400" value="brown" onchange="filterProducts()">
+                    <span class="ml-2">Brown</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Category Filter -->
+        <div class="mb-6">
+            <h4 class="font-semibold mb-2">Categories</h4>
+            <div class="space-y-2" id="categoryFilters">
+                <label class="flex items-center">
+                    <input type="checkbox" class="form-checkbox h-4 w-4 text-gray-600" value="jens" onchange="filterProducts()">
+                    <span class="ml-2">Jens</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="form-checkbox h-4 w-4 text-gray-600" value="jacket" onchange="filterProducts()">
+                    <span class="ml-2">Jackets</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="form-checkbox h-4 w-4 text-gray-600" value="lipstick" onchange="filterProducts()">
+                    <span class="ml-2">Lipstick</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="form-checkbox h-4 w-4 text-gray-600" value="cream" onchange="filterProducts()">
+                    <span class="ml-2">Cream</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="form-checkbox h-4 w-4 text-gray-600" value="glass" onchange="filterProducts()">
+                    <span class="ml-2">Sun Glass</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="form-checkbox h-4 w-4 text-gray-600" value="watch" onchange="filterProducts()">
+                    <span class="ml-2">Watch</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="form-checkbox h-4 w-4 text-gray-600" value="handbag" onchange="filterProducts()">
+                    <span class="ml-2">Hand Bag</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="form-checkbox h-4 w-4 text-gray-600" value="blause" onchange="filterProducts()">
+                    <span class="ml-2">Blause</span>
+                </label>
+            </div>
+        </div>
+
+        <button onclick="resetFilters()" class="w-full bg-pink-400 text-white py-2 px-4 rounded hover:bg-pink-500 transition">
+            Reset Filters
+        </button>
+    </div>
+
+    <!-- Mobile Filters -->
+    <div class="md:hidden fixed bottom-10 right-10 z-50">
+        <button onclick="toggleMobileFilters()" class="bg-pink-400 text-white p-4 rounded-full shadow-lg hover:bg-pink-500 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Mobile Filters Panel -->
+    <div id="mobileFilters" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden md:hidden">
+        <div class="absolute right-0 top-0 h-full w-4/5 bg-white overflow-y-auto p-4 transform translate-x-full transition-transform duration-300">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="font-bold text-lg">Filters</h3>
+                <button onclick="toggleMobileFilters()" class="text-gray-500 hover:text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Price Filter -->
+            <div class="mb-6">
+                <h4 class="font-semibold mb-2">Price Range</h4>
+                <div class="flex items-center justify-between mb-2">
+                    <span>$0</span>
+                    <span>$1000</span>
+                </div>
+                <input type="range" min="0" max="1000" value="1000" 
+                    class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                    id="mobilePriceRange">
+                <div class="text-center mt-2">
+                    <span id="mobilePriceValue">Up to $1000</span>
+                </div>
+            </div>
+
+            <!-- Color Filter -->
+            <div class="mb-6">
+                <h4 class="font-semibold mb-2">Colors</h4>
+                <div class="grid grid-cols-2 gap-2" id="mobileColorFilters">
+                    <label class="flex items-center">
+                        <input type="checkbox" class="form-checkbox h-4 w-4 text-pink-400" value="black" onchange="filterProducts()">
+                        <span class="ml-2">Black</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-400" value="blue" onchange="filterProducts()">
+                        <span class="ml-2">Blue</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" class="form-checkbox h-4 w-4 text-white border border-gray-300" value="white" onchange="filterProducts()">
+                        <span class="ml-2">White</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" class="form-checkbox h-4 w-4 text-red-400" value="red" onchange="filterProducts()">
+                        <span class="ml-2">Red</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" class="form-checkbox h-4 w-4 text-pink-400" value="pink" onchange="filterProducts()">
+                        <span class="ml-2">Pink</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" class="form-checkbox h-4 w-4 text-orange-400" value="orange" onchange="filterProducts()">
+                        <span class="ml-2">Orange</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" class="form-checkbox h-4 w-4 text-yellow-400" value="gold" onchange="filterProducts()">
+                        <span class="ml-2">Gold</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" class="form-checkbox h-4 w-4 text-green-400" value="green" onchange="filterProducts()">
+                        <span class="ml-2">Green</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" class="form-checkbox h-4 w-4 text-purple-400" value="majanta" onchange="filterProducts()">
+                        <span class="ml-2">Majanta</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" class="form-checkbox h-4 w-4 text-brown-400" value="brown" onchange="filterProducts()">
+                        <span class="ml-2">Brown</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="mb-6">
+                <h4 class="font-semibold mb-2">Categories</h4>
+                <div class="grid grid-cols-2 gap-2" id="mobileCategoryFilters">
+                    <label class="flex items-center">
+                        <input type="checkbox" class="form-checkbox h-4 w-4 text-gray-600" value="jens" onchange="filterProducts()">
+                        <span class="ml-2">Jens</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" class="form-checkbox h-4 w-4 text-gray-600" value="jacket" onchange="filterProducts()">
+                        <span class="ml-2">Jackets</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" class="form-checkbox h-4 w-4 text-gray-600" value="lipstick" onchange="filterProducts()">
+                        <span class="ml-2">Lipstick</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" class="form-checkbox h-4 w-4 text-gray-600" value="cream" onchange="filterProducts()">
+                        <span class="ml-2">Cream</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" class="form-checkbox h-4 w-4 text-gray-600" value="glass" onchange="filterProducts()">
+                        <span class="ml-2">Sun Glass</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" class="form-checkbox h-4 w-4 text-gray-600" value="watch" onchange="filterProducts()">
+                        <span class="ml-2">Watch</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" class="form-checkbox h-4 w-4 text-gray-600" value="handbag" onchange="filterProducts()">
+                        <span class="ml-2">Hand Bag</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" class="form-checkbox h-4 w-4 text-gray-600" value="blause" onchange="filterProducts()">
+                        <span class="ml-2">Blause</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="flex gap-2">
+                <button onclick="toggleMobileFilters()" class="flex-1 bg-gray-200 text-gray-800 py-2 px-4 rounded hover:bg-gray-300 transition">
+                    Close
+                </button>
+                <button onclick="resetFilters()" class="flex-1 bg-pink-400 text-white py-2 px-4 rounded hover:bg-pink-500 transition">
+                    Reset
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="flex-1">
+        <div class="bg-white">
+            <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-12 lg:max-w-7xl lg:px-8">
+                <h2 class="text-center text-3xl font-bold tracking-tight text-gray-900">Collections</h2>
+                
+                <!-- Search Bar -->
+                <div class="relative m-3 p-1">
+                    <input 
+                        id="searchInput"
+                        class="border p-5 text-sm w-full rounded-sm pl-10" 
+                        placeholder="Search products by name, color or price..."
+                        onkeyup="filterProducts()">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 absolute left-3 top-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div id="productContainer" class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+        <!-- Product 1 -->
+<div class="group relative product-item" data-name="jacket" data-color="black" data-price="255">
+  <img src="./cloths/jack1.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+  <div class="mt-4 flex justify-between">
+    <div>
+      <h3 class="text-sm text-gray-700">
+        <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Jacket</a>
+      </h3>
+      <p class="mt-1 text-sm text-gray-500">Black</p>
+    </div>
+    <p class="text-sm font-medium text-gray-900">$255</p>
+  </div>
+</div>
+        <!-- Product 2 -->
+<div class="group relative product-item" data-name="cream" data-color="" data-price="65">
+  <img src="./cloths/cream 1.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+  <div class="mt-4 flex justify-between">
+    <div>
+      <h3 class="text-sm text-gray-700">
+        <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Cream</a>
+      </h3>
+      <p class="mt-1 text-sm text-gray-500">Body</p>
+    </div>
+    <p class="text-sm font-medium text-gray-900">$65</p>
+  </div>
+</div>
+
+ <!-- Product 3 -->
+ <div class="group relative product-item" data-name="lipstick" data-color="pink" data-price="23">
+  <img src="./cloths/lifstick3.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+  <div class="mt-4 flex justify-between">
+    <div>
+      <h3 class="text-sm text-gray-700">
+        <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Lipstick</a>
+      </h3>
+      <p class="mt-1 text-sm text-gray-500">Pink</p>
+    </div>
+    <p class="text-sm font-medium text-gray-900">$23</p>
+  </div>
+</div>
+        <!-- Product 4 -->
+        <div class="group relative product-item" data-name="jens" data-color="pink" data-price="30">
+          <img src="./cloths/j1.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Jens</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Pink</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$30</p>
+          </div>
+        </div>
+
+      
+<!-- Product 5 -->
+<div class="group relative product-item" data-name="jacket" data-color="black" data-price="800">
+  <img src="./cloths/jack12.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+  <div class="mt-4 flex justify-between">
+    <div>
+      <h3 class="text-sm text-gray-700">
+        <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Jacket</a>
+      </h3>
+      <p class="mt-1 text-sm text-gray-500">Black</p>
+    </div>
+    <p class="text-sm font-medium text-gray-900">$800</p>
+  </div>
+</div>
+        <!-- Product 6 -->
+        <div class="group relative product-item" data-name="jens" data-color="white" data-price="25">
+          <img src="./cloths/j7.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Jens</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">White</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$25</p>
+          </div>
+        </div>
+
+
+        <!-- Product 7 -->
+        <div class="group relative product-item" data-name="jacket" data-color="brown" data-price="525">
+          <img src="./cloths/jack3.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+      <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Jacket</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Brown</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$525</p>
+          </div>
+        </div>
+
+        <!-- Product 8 -->
+        <div class="group relative product-item" data-name="jens" data-color="blue" data-price="72">
+          <img src="./cloths/j5.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Jens</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Blue</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$72</p>
+          </div>
+        </div>
+
+        <!-- Product 9 -->
+        <div class="group relative product-item" data-name="jacket" data-color="black" data-price="467">
+          <img src="./cloths/jack4.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+<a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Jacket</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Black</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$467</p>
+          </div>
+        </div>
+
+        <!-- Product 10 -->
+
+
+        <div class="group relative product-item" data-name="jens" data-color="blue" data-price="45">
+          <img src="./cloths/j2.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+            <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Jens</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Blue</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$45</p>
+          </div>
+        </div>
+
+<!-- Product 11 -->
+<div class="group relative product-item" data-name="sunglass" data-color="black" data-price="285">
+  <img src="./cloths/glas4.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+  <div class="mt-4 flex justify-between">
+    <div>
+      <h3 class="text-sm text-gray-700">
+        <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Sun glass</a>
+      </h3>
+      <p class="mt-1 text-sm text-gray-500">Black</p>
+    </div>
+    <p class="text-sm font-medium text-gray-900">$285</p>
+  </div>
+</div>
+
+
+        <!-- Product 12 -->
+        <div class="group relative product-item" data-name="jens" data-color="white" data-price="85">
+          <img src="./cloths/j3.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Jens</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">White</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$85</p>
+          </div>
+        </div>
+
+
+        <!-- Product 13 -->
+        <div class="group relative product-item" data-name="sunglass" data-color="pink" data-price="504">
+          <img src="./cloths/glass1.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Sun Glass</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Pink</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$504</p>
+          </div>
+        </div>
+
+        <!-- Product 14 -->
+        <div class="group relative product-item" data-name="jens" data-color="blue" data-price="65">
+          <img src="./cloths/j6.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Jens</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Blue</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$65</p>
+          </div>
+        </div>
+
+<!-- Product 14 -->
+<div class="group relative product-item" data-name="sunglass" data-color="pink" data-price="605">
+  <img src="./cloths/glass2.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+  <div class="mt-4 flex justify-between">
+    <div>
+      <h3 class="text-sm text-gray-700">
+        <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Sun Glass</a>
+      </h3>
+      <p class="mt-1 text-sm text-gray-500">Pink</p>
+    </div>
+    <p class="text-sm font-medium text-gray-900">$605</p>
+  </div>
+</div>
+
+        <!-- Product 15 -->
+        <div class="group relative product-item" data-name="jens" data-color="pink" data-price="56">
+          <img src="./cloths/j1.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Jens</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Pink</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$56</p>
+          </div>
+        </div>
+
+        <!-- Product 16 -->
+        <div class="group relative product-item" data-name="sunglass" data-color="black" data-price="25">
+          <img src="./cloths/glass3.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Sun Glass</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Black</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$25</p>
+          </div>
+        </div>
+
+        <!-- Product 17 -->
+        <div class="group relative product-item" data-name="jens" data-color="orange" data-price="35">
+          <img src="./cloths/j10.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Jens</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Orange</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$35</p>
+          </div>
+        </div>
+
+<!-- Product 18 -->
+<div class="group relative product-item" data-name="lipstick" data-color="red" data-price="25">
+  <img src="./cloths/lifstick1.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+  <div class="mt-4 flex justify-between">
+    <div>
+      <h3 class="text-sm text-gray-700">
+        <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Lipstick</a>
+      </h3>
+      <p class="mt-1 text-sm text-gray-500">Red</p>
+    </div>
+    <p class="text-sm font-medium text-gray-900">$25</p>
+  </div>
+</div>
+
+
+
+        <!-- Product 19 -->
+        <div class="group relative product-item" data-name="jens" data-color="brown" data-price="45">
+          <img src="./cloths/j4.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Jens</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Brown</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$45</p>
+          </div>
+        </div>
+
+        <!-- Product 20 -->
+        <div class="group relative product-item" data-name="jens" data-color="majanta" data-price="35">
+          <img src="./cloths/j9.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Jens</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Majanta</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$35</p>
+          </div>
+        </div>
+
+        <!-- Product 21 -->
+        <div class="group relative product-item" data-name="lipstick" data-color="pink" data-price="35">
+          <img src="./cloths/lifstick2.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+            <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Lipstick</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Pink</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$30</p>
+          </div>
+        </div>
+
+
+        <!-- Product 22 -->
+        <div class="group relative product-item" data-name="handbag" data-color="white" data-price="408">
+          <img src="./cloths/handbag1.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Hand bag</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">White</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$408</p>
+          </div>
+        </div>
+        <!-- Product 23 -->
+        <div class="group relative product-item" data-name="cream" data-color="" data-price="25">
+          <img src="./cloths/cream 4.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Cream</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Face</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$25</p>
+          </div>
+        </div>
+        <!-- Product 24 -->
+        <div class="group relative product-item" data-name="watch" data-color="brown" data-price="900">
+          <img src="./cloths/w1.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Watch</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Brown</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$670</p>
+          </div>
+        </div>
+
+        <!-- Product 25 -->
+        <div class="group relative product-item" data-name="blause" data-color="orange" data-price="90">
+          <img src="./cloths/h1.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Blause</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Orange</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$90</p>
+          </div>
+        </div>
+        <!-- Product 26 -->
+        <div class="group relative product-item" data-name="lipstick" data-color="pink" data-price="56">
+          <img src="./cloths/lifstick4.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Lipstick</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Pink</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$56</p>
+          </div>
+        </div>
+
+
+
+        <!-- Product 27 -->
+        <div class="group relative product-item" data-name="jens" data-color="red" data-price="900">
+          <img src="./cloths/j13.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Jens</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Red</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$65</p>
+          </div>
+        </div>
+
+        <!-- Product 28 -->
+        <div class="group relative product-item" data-name="blause" data-color="orange" data-price="25">
+          <img src="./cloths/h2.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Blause</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Orange</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$25</p>
+          </div>
+        </div>
+        <!-- Product 29 -->
+        <div class="group relative product-item" data-name="handbag" data-color="" data-price="299">
+          <img src="./cloths/handbag2.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Hand Bag</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Brown</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$299</p>
+          </div>
+        </div>
+       
+        <!-- Product 30 -->
+        <div class="group relative product-item" data-name="cream" data-color="" data-price="25">
+          <img src="./cloths/cream 2.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Cream</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">White</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$25</p>
+          </div>
+        </div>
+
+        <!-- Product 31 -->
+        <div class="group relative product-item" data-name="watch" data-color="gold" data-price="250">
+          <img src="./cloths/w2.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Watch</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Gold</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$250</p>
+          </div>
+        </div>
+
+        <!-- Product 32 -->
+        <div class="group relative product-item" data-name="handbag" data-color="black" data-price="925">
+          <img src="./cloths/handbag3.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Hand Bag</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Black</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$925</p>
+          </div>
+        </div>
+
+        <!-- Product 33 -->
+        <div class="group relative product-item" data-name="watch" data-color="green" data-price="925">
+          <img src="./cloths/w3.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Watch</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Green</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$925</p>
+          </div>
+        </div>
+
+        <!-- Product 34 -->
+        <div class="group relative product-item" data-name="cream" data-color="" data-price="52">
+          <img src="./cloths/cream3.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Cream</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Face</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$52</p>
+          </div>
+        </div>
+
+        <!-- Product 35 -->
+        <div class="group relative product-item" data-name="watch" data-color="green" data-price="625">
+          <img src="./cloths/w4.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Watch</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Green</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$625</p>
+          </div>
+        </div>
+
+        <!-- Product 36 -->
+        <div class="group relative product-item" data-name="handbag" data-color="black" data-price="285">
+          <img src="./cloths/handbag4.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Hand Bag</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Black</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$285</p>
+          </div>
+        </div>
+        <!-- Product 37 -->
+        <div class="group relative product-item" data-name="blause" data-color="pink" data-price="55">
+          <img src="./cloths/h4.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Blause</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Pink</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$55</p>
+          </div>
+        </div>
+
+        <!-- Product 38 -->
+        <div class="group relative product-item" data-name="handbag" data-color="black" data-price="75">
+          <img src="./cloths/handbag3.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Hand Bag</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Black</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$75</p>
+          </div>
+        </div>
+        <!-- Product 12 -->
+        <div class="group relative product-item" data-name="jens" data-color="black" data-price="35">
+          <img src="./cloths/j12.webp" alt="Front of men's Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-70">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#" class="font-bold text-xl hover:text-pink-400"><span aria-hidden="true" class="absolute inset-0 "></span> Jens</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Black</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$35</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer -------------------------------------------------------------------------------------->
+    <section class="bg-black text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> <!-- Add container -->
+        <div class="text-clip py-10"> <!-- Adjust padding -->
+          <h1 class="text-4xl pt-4 font-extrabold">Nostra</h1>
+          <p class="mt-2">The Stand chunk of ipsum used the 1500s is reporodused below for those interest</p>
+          <div class="flex justify-between bg-white gap-3 p-1 m-2 w-40 rounded-md">
+          <p class="bg-gray-50 cursor-pointer "><img src="./images/social-media.png" class="w-6 h-6"></p>
+          <p class="bg-gray-50 cursor-pointer "><img src="./images/facebook.png" class="w-6 h-6"></p>
+          <p class="bg-gray-50 cursor-pointer "><img src="./images/twitter-sign.png" class="w-6 h-6"></p>
+          <p class="bg-gray-50  cursor-pointer"><img src="./images/youtube.png" class="w-6 h-6"></p>
+          <p class="bg-white  cursor-pointer"><img src="./images/gmail-logo.png" class="w-6 h-6"></p>
+        </div>
+        <p class="pt-2 inline-block ">@ 2023 Nostra.com</p>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+  
+  <script>
+    // Filter Functions
+    function filterProducts() {
+        const searchInput = document.getElementById('searchInput').value.toLowerCase();
+        const priceRange = parseInt(document.getElementById('priceRange').value);
+        const mobilePriceRange = parseInt(document.getElementById('mobilePriceRange').value);
+        const activePriceRange = Math.min(priceRange, mobilePriceRange);
+        
+        const colorCheckboxes = document.querySelectorAll('#colorFilters input[type="checkbox"]:checked, #mobileColorFilters input[type="checkbox"]:checked');
+        const selectedColors = Array.from(colorCheckboxes).map(cb => cb.value.toLowerCase());
+        
+        const categoryCheckboxes = document.querySelectorAll('#categoryFilters input[type="checkbox"]:checked, #mobileCategoryFilters input[type="checkbox"]:checked');
+        const selectedCategories = Array.from(categoryCheckboxes).map(cb => cb.value.toLowerCase());
+        
+        const products = document.getElementsByClassName('product-item');
+
+        for (let product of products) {
+            const name = product.dataset.name.toLowerCase();
+            const color = product.dataset.color.toLowerCase();
+            const price = parseInt(product.dataset.price);
+            const productText = product.textContent.toLowerCase();
+
+            const matchesSearch = searchInput === '' || 
+                                name.includes(searchInput) || 
+                                color.includes(searchInput) || 
+                                productText.includes(searchInput);
+            
+            const matchesPrice = price <= activePriceRange;
+            const matchesColor = selectedColors.length === 0 || selectedColors.some(c => color.includes(c));
+            const matchesCategory = selectedCategories.length === 0 || selectedCategories.some(cat => name.includes(cat));
+
+            product.style.display = (matchesSearch && matchesPrice && matchesColor && matchesCategory) ? "" : "none";
+        }
+    }
+
+    function resetFilters() {
+        document.getElementById('searchInput').value = '';
+        document.getElementById('priceRange').value = 1000;
+        document.getElementById('mobilePriceRange').value = 1000;
+        document.getElementById('priceValue').textContent = 'Up to $1000';
+        document.getElementById('mobilePriceValue').textContent = 'Up to $1000';
+        
+        document.querySelectorAll('#colorFilters input[type="checkbox"], #mobileColorFilters input[type="checkbox"]')
+            .forEach(cb => cb.checked = false);
+        
+        document.querySelectorAll('#categoryFilters input[type="checkbox"], #mobileCategoryFilters input[type="checkbox"]')
+            .forEach(cb => cb.checked = false);
+        
+        filterProducts();
+    }
+
+    function toggleMobileFilters() {
+        const mobileFilters = document.getElementById('mobileFilters');
+        const panel = mobileFilters.querySelector('div');
+        
+        mobileFilters.classList.toggle('hidden');
+        panel.classList.toggle('translate-x-full');
+    }
+
+    // Price Range Updates
+    document.getElementById('priceRange').addEventListener('input', function() {
+        document.getElementById('priceValue').textContent = `Up to $${this.value}`;
+        document.getElementById('mobilePriceRange').value = this.value;
+        document.getElementById('mobilePriceValue').textContent = `Up to $${this.value}`;
+        filterProducts();
+    });
+
+    document.getElementById('mobilePriceRange').addEventListener('input', function() {
+        document.getElementById('mobilePriceValue').textContent = `Up to $${this.value}`;
+        document.getElementById('priceRange').value = this.value;
+        document.getElementById('priceValue').textContent = `Up to $${this.value}`;
+        filterProducts();
+    });
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', filterProducts);
+</script>
+</body>
+</html>
